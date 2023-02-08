@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      Department #<%= @the_department.id %> details
+      Department #<%= @matching_departments.id %> details
     </h1>
 
     <div class="row mb-3">
@@ -17,14 +17,14 @@
         Name
       </dt>
       <dd>
-        <%= @the_department.name %>
+        <%= @matching_departments.name %>
       </dd>
 
       <dt>
         Number of courses
       </dt>
       <dd>
-        <%= Course.where({ :department_id => @the_department.id }).count %> 
+        <%= Course.where({ :department_id => @matching_departments.id }).count %> 
       </dd>
 
     </dl>
@@ -34,7 +34,7 @@
 <hr>
 
 <h2>Courses</h2>
-<% courses = Course.where({ :department_id => @the_department.id }) %>
+<% courses = Course.where({ :department_id => @matching_departments.id }) %>
 <ul>
   <% courses.each do |course| %>
     <li>
