@@ -46,8 +46,9 @@
         </td>
 
         <td>
-          <% department = Department.where({ :id => @the_course_id }).at(0) %>
-          <a href="/departments/<%= course.id %>"> </a>
+          
+          <%= @department = Department.where({ :id => departments }).at(0) %>
+          <a href="/departments/<%= @department.id %>"> </a>
         </td>
 
         <td>
